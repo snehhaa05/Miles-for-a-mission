@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Step 3 | Miles for a Mission</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("input[name='illness']").on("change", function() {
+        if ($(this).val() === "yes") {
+          $("#illnessDetail").show();
+        } else {
+          $("#illnessDetail").hide();
+        }
+      });
+
+      $('#finalForm').on('submit', function(e) {
+        e.preventDefault();
+        alert("Registration successful! (Final Step with Health Info)");
+        this.reset();
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <div class="logo">Miles for a Mission</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="register1.html">Register</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Step 3: Health Information</h2>
+    <form id="finalForm" autocomplete="off">
+      <label for="height">Height (in cm):
+        <input type="number" id="height" name="height" min="50" max="300" required>
+      </label>
+      <label for="weight">Weight (in kg):
+        <input type="number" id="weight" name="weight" min="20" max="300" required>
+      </label>
+      <label for="blood">Blood Group:
+        <select id="blood" name="blood" required>
+          <option value="">Select</option>
+          <option>A+</option><option>A-</option>
+          <option>B+</option><option>B-</option>
+          <option>O+</option><option>O-</option>
+          <option>AB+</option><option>AB-</option>
+        </select>
+      </label>
+      <label>Any past disease/illness?
+        <label><input type="radio" name="illness" value="yes"> Yes</label>
+        <label><input type="radio" name="illness" value="no" checked> No</label>
+      </label>
+      <div id="illnessDetail" style="display:none;">
+        <label for="illness_desc">If yes, please specify:
+          <textarea id="illness_desc" name="illness_desc" rows="3"></textarea>
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+</body>
+</html>
