@@ -1,93 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>About | Miles for a Mission</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="js/main.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - miles for a mission</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Accordion base styles (optional, tweak for your theme if you want) */
+    .accordion-toggle {
+      background: #eef2ff;
+      color: #3730a3;
+      cursor: pointer;
+      font-size: 1.15rem;
+      padding: 1rem 1.2rem;
+      border: none;
+      outline: none !important;
+      width: 100%;
+      text-align: left;
+      transition: background 0.2s, color 0.2s;
+      font-weight: 700;
+      border-radius: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .accordion-toggle.active, .accordion-toggle:hover {
+      background: #6366f1;
+      color: #fff;
+    }
+    .accordion-section {
+      padding: 0 16px;
+      background: #fff;
+      border-radius: 0.65rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 17px -4px #6366f122;
+      display: none;
+      animation: fadein-accordion 0.33s;
+    }
+    .accordion-section.open {
+      display: block;
+    }
+    @keyframes fadein-accordion {
+      from { opacity: 0; transform: translateY(20px);}
+      to   { opacity: 1; transform: none;}
+    }
+  </style>
 </head>
-<body>
-  <nav>
-    <div class="logo">Miles for a Mission</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="register1.html">Register</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h1>About Miles for a Mission</h1>
+<body class="text-gray-800 bg-indigo-50 min-h-screen flex flex-col">
 
-    <section class="about-section">
-      <h2>Our Mission</h2>
-      <p>
-        Miles for a Mission is India’s premier online marathon event aimed at promoting health, fitness, and community spirit. We bring runners from all over the country together to participate, compete, and contribute to meaningful causes.
+  <!-- Header -->
+  <header class="bg-white shadow-md py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center rounded-b-lg">
+    <div class="text-2xl font-bold text-indigo-700 mb-4 md:mb-0">Miles for a Mission</div>
+    <nav class="space-x-4 md:space-x-8 flex flex-wrap justify-center md:justify-end">
+      <a href="index.html" class="text-gray-600 hover:text-indigo-700 font-medium">Home</a>
+      <a href="register.html" target="_blank" class="text-gray-600 hover:text-indigo-700 font-medium">Register</a>
+      <a href="login.html" target="_blank" class="text-gray-600 hover:text-indigo-700 font-medium">Login</a>
+      <a href="gallery.html" class="text-gray-600 hover:text-indigo-700 font-medium">Gallery</a>
+      <a href="about.html" class="text-indigo-700 font-bold">About</a>
+
+      <a href="register.html" target="_blank" class="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 shadow-lg mt-2 md:mt-0 ml-0 md:ml-4">Register Now</a>
+    </nav>
+  </header>
+  
+  <main class="container mx-auto p-4 md:p-8 mt-8 flex-grow">
+
+    <!-- About Section (always visible) -->
+    <section class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 mb-8">
+      <h1 class="text-4xl font-bold text-indigo-700 mb-6 text-center">About Miles for a Mission Marathon</h1>
+      <p class="text-lg text-gray-700 mb-4 text-center max-w-3xl mx-auto">
+        The <b>Miles for a Mission Marathon</b> is India's most energetic celebration of fitness, unity, and community spirit. Since its launch, it has united runners, families, and cities across the country—motivating people to go beyond their limits, support health causes, and make new friends on the track. It’s not just a race; it’s a movement to uplift the nation through healthy competition, inclusivity, and the sheer joy of running together.
       </p>
-    </section>
-
-    <section class="about-section">
-      <h2>Event Details</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Distance</th>
-            <th>Registration Fee</th>
-            <th>Prizes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Men's Open</td>
-            <td>42.195 km</td>
-            <td>₹500</td>
-            <td>Cash & Medals</td>
-          </tr>
-          <tr>
-            <td>Women's Open</td>
-            <td>42.195 km</td>
-            <td>₹500</td>
-            <td>Cash & Medals</td>
-          </tr>
-          <tr>
-            <td>Veterans (40+)</td>
-            <td>21 km</td>
-            <td>₹300</td>
-            <td>Medals</td>
-          </tr>
-          <tr>
-            <td>Students</td>
-            <td>10 km</td>
-            <td>₹200</td>
-            <td>Certificates</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="about-section">
-      <h2>Why Participate?</h2>
-      <ul>
-        <li> <strong>Health Benefits:</strong> Improve your fitness and well-being.</li>
-        <li> <strong>Community Impact:</strong> Support charitable causes through your participation.</li>
-        <li> <strong>Flexibility:</strong> Run anytime, anywhere within the event dates.</li>
-        <li> <strong>Recognition:</strong> Get featured on our leaderboard and win exciting prizes.</li>
+      <ul class="list-disc list-inside text-gray-700 mb-4 max-w-2xl mx-auto">
+        <li><b>Date:</b> October 26, 2025 (Kolkata edition)</li>
+        <li><b>Major Cities:</b> Delhi, Mumbai, Bengaluru, Hyderabad, Chennai, Kolkata</li>
+        <li><b>Open to:</b> All ages and abilities. Choose from a full marathon, half marathon, 10K, or 5K fun run.</li>
+        <li><b>Mission:</b> Uniting India for health, fitness, and hope—one stride at a time.</li>
       </ul>
     </section>
 
-    <section class="about-section">
-      <h2>Contact Us</h2>
-      <p>
-        For any queries or support, please visit our <a href="contact.html">Contact page</a>.
-      </p>
+    <!-- Accordion: Race Details -->
+    <button class="accordion-toggle" type="button">Race Details</button>
+    <section class="accordion-section">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Race Overview -->
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Kolkata Marathon 2025 - Race Details</h2>
+          <p class="mb-4 text-gray-700">
+            The Kolkata Marathon 2025 takes you on an exhilarating journey through the vibrant, historic streets of the City of Joy. Experience scenic running routes past icons like the Victoria Memorial and Howrah Bridge.
+          </p>
+          <ul class="text-gray-700 space-y-2 mb-4">
+            <li><span class="font-semibold text-indigo-600">Date:</span> October 26, 2025</li>
+            <li><span class="font-semibold text-indigo-600">Location:</span> Kolkata, West Bengal</li>
+            <li><span class="font-semibold text-indigo-600">Start Time:</span> 6:00 AM (Full Marathon)</li>
+            <li><span class="font-semibold text-indigo-600">Categories:</span>
+              <span class="badge">Full Marathon (42.195 km)</span>
+              <span class="badge">Half Marathon (21.097 km)</span>
+              <span class="badge">10K Run</span>
+              <span class="badge">5K Fun Run</span>
+            </li>
+            <li><span class="font-semibold text-indigo-600">Reporting Time:</span> 5:00 AM for all categories</li>
+            <li><span class="font-medium">Bib Collection:</span> Oct 24-25, Netaji Indoor Stadium</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-800 mt-7 mb-3">What to Expect</h3>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>Hydration points every 2.5 km</li>
+            <li>Medical aid stations every 5 km</li>
+            <li>Live entertainment along the route</li>
+            <li>Finisher medal and e-certificate for all participants</li>
+            <li>Post-race refreshments and recovery zone</li>
+          </ul>
+        </div>
+        <!-- Race Route Map -->
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Race Route Map</h3>
+          <div class="bg-gray-200 rounded-lg overflow-hidden shadow-md border border-gray-300">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.183701646271!2d88.34212517524025!3d22.57264643336719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027781c1c9b639%3A0x8f2d5c8b7c7b8f!2sVictoria%20Memorial!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin"
+              width="100%" height="390" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+            <p class="text-sm text-gray-600 p-4">
+              *The map above shows the general area. Final route published before race day.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- Accordion: Prize Details -->
+    <button class="accordion-toggle" type="button">Prize Details</button>
+    <section class="accordion-section">
+      <h2 class="text-2xl font-bold text-indigo-600 mb-6 text-center">Prizes & Recognition</h2>
+      <p class="text-lg text-gray-700 mb-6 text-center max-w-2xl mx-auto">
+        Motivating and rewarding excellence, every category offers attractive prizes. Plus, <b>all finishers</b> get a special medal and an e-certificate!
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-base mb-8">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>First Prize</th>
+              <th>Second Prize</th>
+              <th>Third Prize</th>
+              <th>Finisher</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full Marathon</td>
+              <td><span class="text-lg font-bold text-indigo-700">&#8377;1,50,000</span></td>
+              <td>&#8377;75,000</td>
+              <td>&#8377;40,000</td>
+              <td>Medal & Certificate</td>
+            </tr>
+            <tr>
+              <td>Half Marathon</td>
+              <td>&#8377;75,000</td>
+              <td>&#8377;40,000</td>
+              <td>&#8377;20,000</td>
+              <td>Medal & Certificate</td>
+            </tr>
+            <tr>
+              <td>10K Run</td>
+              <td>&#8377;30,000</td>
+              <td>&#8377;15,000</td>
+              <td>&#8377;8,000</td>
+              <td>Medal & Certificate</td>
+            </tr>
+            <tr>
+              <td>5K Fun Run</td>
+              <td colspan="3">Trophy for top 3 overall finishers</td>
+              <td>Medal & Certificate</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="text-gray-700 list-disc list-inside mb-4 max-w-2xl mx-auto">
+        <li>Equal cash prizes for men & women</li>
+        <li>Age-group prizes and special awards for differently-abled runners</li>
+        <li>Every finisher gets a unique medal and e-certificate</li>
+        <li>Podium photo opportunity for all top winners</li>
+      </ul>
+    </section>
+
   </main>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 mt-8 rounded-t-lg">
+    <div class="container mx-auto text-center">
+      <p class="mb-4 text-lg font-semibold">Miles for a Mission Marathon</p>
+      <p class="text-gray-400">&copy; 2025 All rights reserved. Designed with passion for running.</p>
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+        <a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Simple accordion logic for all .accordion-toggle buttons
+    document.addEventListener("DOMContentLoaded", function() {
+      // By default, none open. Optionally open first by default: document.querySelectorAll('.accordion-section')[0].classList.add("open");
+      let accBtn = document.querySelectorAll('.accordion-toggle');
+      accBtn.forEach(function(btn, idx) {
+        btn.addEventListener("click", function() {
+          // Toggle this one
+          let panel = this.nextElementSibling;
+          let isOpen = panel.classList.contains('open');
+          // Close all
+          document.querySelectorAll('.accordion-section').forEach(sec => sec.classList.remove('open'));
+          document.querySelectorAll('.accordion-toggle').forEach(b => b.classList.remove('active'));
+          // Open this only if it wasn't open
+          if (!isOpen) {
+            panel.classList.add('open');
+            this.classList.add('active');
+            // For accessibility: scroll into view on open (optional)
+            setTimeout(() => panel.scrollIntoView({behavior: 'smooth', block: 'start'}), 210);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
