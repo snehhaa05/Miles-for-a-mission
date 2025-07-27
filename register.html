@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Marathon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-lg border border-gray-200">
+        <h2 class="text-3xl font-bold text-center text-indigo-700 mb-8">Marathon Registration</h2>
+        <!-- Step indicator -->
+        <div class="flex items-center justify-center mb-8 space-x-4">
+            <div class="flex items-center">
+                <div id="step-indicator-1" class="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold step-circle">1</div>
+                <span class="ml-2 text-sm font-semibold step-label" id="step-label-1">Basic</span>
+            </div>
+            <div class="w-8 border-t-2 border-indigo-200"></div>
+            <div class="flex items-center">
+                <div id="step-indicator-2" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-500 font-bold step-circle">2</div>
+                <span class="ml-2 text-sm font-semibold step-label" id="step-label-2">Details</span>
+            </div>
+            <div class="w-8 border-t-2 border-indigo-200"></div>
+            <div class="flex items-center">
+                <div id="step-indicator-3" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-500 font-bold step-circle">3</div>
+                <span class="ml-2 text-sm font-semibold step-label" id="step-label-3">Photo</span>
+            </div>
+        </div>
+        <form action ="register.php" id="registrationForm" enctype="multipart/form-data" method="post">
+            <!-- Step 1: Basic -->
+            <div class="step" id="step1">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" id="phone" name="phoneno." required class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" name="password" required class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                 <div>
+                    <label for="confirmpassword" class="block text-sm font-medium text-gray-700 mb-1">confirm Password</label>
+                    <input type="password" id="confirmpassword" name="password" required class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                
+            </div>
+            <!-- Step 2: Details -->
+            <div class="hidden step" id="step2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" step="0.1" min="20" max="300" class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
+                        <input type="number" id="height" name="height" step="1" min="100" max="250" class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label for="conditions" class="block text-sm font-medium text-gray-700 mb-1">Medical Conditions / Allergies (Optional)</label>
+                    <textarea id="conditions" name="Medicalconditions" rows="3" class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                </div>
+                <div>
+                    <label for="bloodGroup" class="block text-sm font-medium text-gray-700 mb-1">Blood Group</label>
+                    <select id="bloodGroup" name="bloodGroup" required class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Select Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Step 3: Photo -->
+            <div class="hidden step" id="step3">
+                <div>
+                    <label for="photo" class="block text-sm font-medium text-gray-700 mb-1">
+                        Upload Your Photo (JPEG only, max 2MB)
+                    </label>
+                    <input type="file" id="photo" name="photo" accept="image/jpeg" class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                    <div id="photoPreview" class="mt-4"></div>
+                </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="flex mt-8">
+                <button type="button" id="prevBtn" class="btn bg-gray-200 text-gray-700 hover:bg-gray-300 !text-base font-medium px-6 py-2 rounded-lg mr-4 hidden">Previous</button>
+                <button type="button" id="nextBtn" class="btn bg-indigo-600 text-white hover:bg-indigo-700 !text-base font-medium px-6 py-2 rounded-lg ml-auto">Next</button>
+                <button type="submit" id="submitBtn" class="btn bg-indigo-600 text-white hover:bg-indigo-700 !text-base font-medium px-6 py-2 rounded-lg ml-auto hidden">Submit</button>
+            </div>
+        </form>
+        <div id="messageBox" class="hidden mt-6 p-4 rounded-md text-sm text-center" role="alert"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
+     <script src="register.js"></script>
+     <script src="register.php"></script>
+</body>
+</html>
