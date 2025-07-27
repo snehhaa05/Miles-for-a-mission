@@ -1,13 +1,16 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "marathon_db";
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "marathon1";
 
-$conn = new mysqli($host, $user, $pass, $db);
+$con = mysqli_connect($server, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed");
+if (!$con) {
+    echo("Connection failed: " . mysqli_connect_error());
+}
+ else {
+    echo "connected";
 }
 
 $usernameOrEmail = $_POST['emailOrUsername'];
