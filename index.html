@@ -1,66 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Miles for a Mission</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    header {
-      background: linear-gradient(120deg, #005DAA 0%, #ED174F 100%);
-      color: #fff;
-      text-align: center;
-      padding: 60px 30px 40px 30px;
-      border-radius: 18px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 24px rgba(237, 23, 79, 0.25);
-      position: relative;
-    }
-    #countdown {
-      font-size: 2em;
-      margin: 20px 0;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 8px #005DAA55;
-    }
-    .cta-btn {
-      background: #FFD6E8;
-      color: #ED174F;
-      font-size: 1.2em;
-      border: none;
-      padding: 14px 32px;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 25px;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 4px 12px #ED174F44;
-    }
-    .cta-btn:hover {
-      background: #ED174F;
-      color: #fff;
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles for a Mission</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc; /* Light gray background */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
-<body>
-  <nav>
-    <div class="logo">Miles for a Mission</div>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="register1.html">Register</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
-  <header>
-    <h1>Welcome to <span style="color:#FFD6E8;">Miles for a Mission</span></h1>
-    <p>India's Premier Online Marathon Event</p>
-    <div id="countdown"></div>
-    <a href="register1.html" class="cta-btn">Register Now</a>
-  </header>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center rounded-b-lg">
+        <div class="text-2xl font-bold text-indigo-700 mb-4 md:mb-0">Miles for a Mission</div>
+        <nav class="space-x-4 md:space-x-8 flex flex-wrap justify-center md:justify-end">
+            <a href="index.html" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Home</a>
+            <a href="register.html" target="_blank" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Register</a>
+            <a href="login.html" target="_blank" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Login</a>
+            <a href="gallery.html" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Gallery</a>
+            <a href="about.html" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">About</a>
+            <a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a>
+            <a href="register.html" target="_blank" class="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition duration-300 shadow-lg mt-2 md:mt-0 ml-0 md:ml-4">Register Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 md:px-12 text-center overflow-hidden rounded-lg mx-4 mt-8 shadow-xl">
+        <div class="absolute inset-0 opacity-20">
+            <!-- Background pattern for visual interest -->
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.2" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Miles for a Mission</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Uniting the nation, one stride at a time. Join us in celebrating fitness, community, and the spirit of India.</p>
+            <a href="#upcoming-races" class="bg-white text-indigo-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg transform hover:scale-105">Find Your Race</a>
+        </div>
+    </section>
+
+    <!-- Previous Races Section -->
+    <section id="previous-races" class="py-16 px-6 md:px-12 bg-white mx-4 mt-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12">Our Legacy: Previous Races</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Race Card 1 -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 border border-gray-200">
+                <img src="https://media.assettype.com/outlookindia/import/uploadimage/library/16_9/16_9_5/IMAGE_1700385742.webp?w=1200&amp;ar=40:21&amp;auto=format%2Ccompress&amp;ogImage=true&amp;mode=crop&amp;enlarge=true&amp;overlay=false&amp;overlay_position=bottom&amp;overlay_width=100" alt="Delhi Marathon 2024" class="w-full h-48 object-cover rounded-lg mb-4 shadow-sm">
+                <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Delhi Marathon 2024</h3>
+                <p class="text-gray-700 mb-3">A spectacular event held in the heart of the capital, witnessing record participation and incredible spirit.</p>
+                <ul class="text-gray-600 text-sm space-y-1">
+                    <li><span class="font-medium">Date:</span> March 10, 2024</li>
+                    <li><span class="font-medium">Participants:</span> 25,000+</li>
+                    <li><span class="font-medium">Highlights:</span> New course record, celebrity appearances.</li>
+                </ul>
+            </div>
+            <!-- Race Card 2 -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 border border-gray-200">
+                <img src="https://media.gettyimages.com/id/1943409555/photo/tata-mumbai-marathon-2024.jpg?s=1024x1024&w=gi&k=20&c=HHWD-KhHuWyks3F-fdE4gBi0f9-hkDPUoamE25RbNYg=" alt="Mumbai Marathon 2023" class="w-full h-48 object-cover rounded-lg mb-4 shadow-sm">
+                <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Mumbai Marathon 2023</h3>
+                <p class="text-gray-700 mb-3">The dream run along the iconic Mumbai coastline, bringing together runners from all walks of life.</p>
+                <ul class="text-gray-600 text-sm space-y-1">
+                    <li><span class="font-medium">Date:</span> January 21, 2023</li>
+                    <li><span class="font-medium">Participants:</span> 30,000+</li>
+                    <li><span class="font-medium">Highlights:</span> Coastal route, vibrant atmosphere.</li>
+                </ul>
+            </div>
+            <!-- Race Card 3 -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 border border-gray-200">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.Nlx5BoYzdgFfVNVhrHPEgAHaE7?pid=Api&P=0&h=180" alt="Bengaluru Marathon 2022" class="w-full h-48 object-cover rounded-lg mb-4 shadow-sm">
+                <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Bengaluru Marathon 2022</h3>
+                <p class="text-gray-700 mb-3">The tech city's biggest running festival, promoting health and wellness in the Garden City.</p>
+                <ul class="text-gray-600 text-sm space-y-1">
+                    <li><span class="font-medium">Date:</span> November 5, 2022</li>
+                    <li><span class="font-medium">Participants:</span> 20,000+</li>
+                    <li><span class="font-medium">Highlights:</span> Green routes, strong community support.</li>
+                </ul>
+            </div>
+            <!-- Add more race cards as needed -->
+        </div>
+    </section>
+
+    <!-- Races by City Section -->
+    <section id="races-by-city" class="py-16 px-6 md:px-12 bg-gray-50 mx-4 mt-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12">Races by City</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- City Card 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center hover:shadow-lg transition duration-300 transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">New Delhi</h3>
+                <p class="text-indigo-600 text-4xl font-bold">5</p>
+                <p class="text-gray-600">Marathons Hosted</p>
+            </div>
+            <!-- City Card 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center hover:shadow-lg transition duration-300 transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Mumbai</h3>
+                <p class="text-indigo-600 text-4xl font-bold">7</p>
+                <p class="text-gray-600">Marathons Hosted</p>
+            </div>
+            <!-- City Card 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center hover:shadow-lg transition duration-300 transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bengaluru</h3>
+                <p class="text-indigo-600 text-4xl font-bold">4</p>
+                <p class="text-gray-600">Marathons Hosted</p>
+            </div>
+            <!-- City Card 4 -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center hover:shadow-lg transition duration-300 transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Chennai</h3>
+                <p class="text-indigo-600 text-4xl font-bold">3</p>
+                <p class="text-gray-600">Marathons Hosted</p>
+            </div>
+            <!-- Add more city cards as needed -->
+        </div>
+    </section>
+
+    <!-- Upcoming Races Section -->
+    <section id="upcoming-races" class="py-16 px-6 md:px-12 bg-white mx-4 mt-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12">Gear Up: Upcoming Races</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Upcoming Race Card 1 -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col md:flex-row items-center hover:shadow-lg transition duration-300 border border-gray-200">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.xadf9qiTpYXHy2T-1ryb8AHaEr?pid=Api&P=0&h=180" alt="Kolkata Marathon" class="w-full md:w-1/3 h-48 md:h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-6 shadow-sm">
+                <div class="flex-grow">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Kolkata Marathon 2025</h3>
+                    <p class="text-gray-700 mb-3">Experience the City of Joy like never before, running through its historic streets.</p>
+                    <ul class="text-gray-600 text-sm space-y-1 mb-4">
+                        <li><span class="font-medium">Date:</span> October 26, 2025</li>
+                        <li><span class="font-medium">Location:</span> Kolkata, West Bengal</li>
+                        <li><span class="font-medium">Categories:</span> Full, Half, 10K, 5K</li>
+                    </ul>
+                    <a href="register.html" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300 shadow-md inline-block">Register for Kolkata</a>
+                </div>
+            </div>
+            <!-- Upcoming Race Card 2 -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col md:flex-row items-center hover:shadow-lg transition duration-300 border border-gray-200">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.lQ8sAsZVMRegvDvB0NkEhwHaFj?pid=Api&P=0&h=180" alt="Hyderabad Marathon" class="w-full md:w-1/3 h-48 md:h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-6 shadow-sm">
+                <div class="flex-grow">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Hyderabad Marathon 2025</h3>
+                    <p class="text-gray-700 mb-3">Run through the city of pearls and biryani, a truly unique running experience.</p>
+                    <ul class="text-gray-600 text-sm space-y-1 mb-4">
+                        <li><span class="font-medium">Date:</span> December 14, 2025</li>
+                        <li><span class="font-medium">Location:</span> Hyderabad, Telangana</li>
+                        <li><span class="font-medium">Categories:</span> Full, Half, 10K</li>
+                    </ul>
+                    <a href="register.html" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300 shadow-md inline-block">Register for Hyderabad</a>
+                </div>
+            </div>
+            <!-- Add more upcoming race cards as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 mt-8 rounded-t-lg">
+        <div class="container mx-auto text-center">
+            <p class="mb-4 text-lg font-semibold">Run for India Marathon</p>
+            <p class="text-gray-400">&copy; 2025 All rights reserved. Designed with passion for running.</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                <a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
